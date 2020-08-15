@@ -1,4 +1,13 @@
 <div>
-    <a href="/users/signup">Sign up</a>
-    <a href="/users/signin">Sign in</a>
+    <% if(locals.localuser) { %>
+
+        <a href="/">Home</a>
+        <a href="/users/signout">Sign out</a>
+
+    <% } else { %>
+
+        <a href="/users/signup">Sign up</a>
+        <a href="/users/signin">Sign in</a>
+
+    <% } %>
 </div>

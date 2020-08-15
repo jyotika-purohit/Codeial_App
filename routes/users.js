@@ -5,6 +5,7 @@ const users_controller=require('../controllers/users_controller');
 
 router.get('/signup',users_controller.signup);
 router.get('/signin',users_controller.signin);
+router.get('/signout',users_controller.signout);
 router.post('/create',users_controller.create);
 
 router.post('/create_session',
