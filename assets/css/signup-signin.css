@@ -1,0 +1,54 @@
+#signup-signin-container {
+  background-color: whitesmoke;
+  height: 80vh; }
+  #signup-signin-container #signup-signin {
+    height: 100%;
+    min-height: 300px;
+    min-width: 300px;
+    padding: 5px;
+    margin: 10px auto;
+    width: 35%;
+    background-color: white; }
+    #signup-signin-container #signup-signin > div {
+      display: flex; }
+      #signup-signin-container #signup-signin > div #close-opt {
+        widows: 10%; }
+        #signup-signin-container #signup-signin > div #close-opt img {
+          height: 20px;
+          width: 20px; }
+      #signup-signin-container #signup-signin > div h2 {
+        width: 85%;
+        margin: 0%;
+        text-align: center;
+        color: orangered;
+        font-family: cursive;
+        font-size: 40px; }
+    #signup-signin-container #signup-signin form {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column; }
+      #signup-signin-container #signup-signin form > * {
+        display: block;
+        margin: 10px auto;
+        width: 60%;
+        min-width: 200px;
+        height: 30px; }
+      #signup-signin-container #signup-signin form input {
+        border: none;
+        background-color: whitesmoke;
+        padding-inline-start: 10px; }
+        #signup-signin-container #signup-signin form input:focus {
+          outline-color: #fc936d;
+          outline-width: 1px; }
+      #signup-signin-container #signup-signin form button {
+        margin-top: 70px;
+        border: 2px solid orangered;
+        background-color: white;
+        color: orangered;
+        font-weight: 700;
+        letter-spacing: 0.05rem;
+        height: 50px; }
+        #signup-signin-container #signup-signin form button:hover {
+          color: white;
+          cursor: pointer;
+          background-color: #fc703d; }
