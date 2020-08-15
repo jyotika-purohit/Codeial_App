@@ -2,7 +2,9 @@ const express=require('express');
 const app=express();
 const path=require('path');
 const port=8000;
+const db=require('./config/mongoose');
 const express_ejs_layouts=require('express-ejs-layouts');
+
 
 app.set('view engine','ejs');
 app.set('views',path.join(__dirname,'views'));
