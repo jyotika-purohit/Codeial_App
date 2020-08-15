@@ -6,10 +6,12 @@ const db=require('./config/mongoose');
 const express_ejs_layouts=require('express-ejs-layouts');
 const session=require('express-session');
 const passport = require('./config/passport_local_auth');
+const MongoStore =require('connect-mongo')(session);
 
 app.set('view engine','ejs');
 app.set('views',path.join(__dirname,'views'));
 var sassMiddleware = require('node-sass-middleware');
+
 
 app.use(sassMiddleware({
     /* Options */
@@ -34,7 +36,19 @@ app.use(session({
     saveUninitialized: true,
     cookie: {
         maxAge:1000*60*20
-    }
+    },
+    
+    store:new MongoStore(
+        {
+        mongooseConnection:db,
+        autoRemove:'disabled'
+
+        },
+        function(error){
+            console.log(error || "Connect Mongo setup OK");
+
+        }
+    )
 }));
 
 app.use(passport.initialize());
