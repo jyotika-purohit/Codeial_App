@@ -7,6 +7,9 @@ const express_ejs_layouts=require('express-ejs-layouts');
 const session=require('express-session');
 const passport = require('./config/passport_local_auth');
 const MongoStore =require('connect-mongo')(session);
+const flash=require('connect-flash');
+const customMware=require('./config/middleware');
+
 
 app.set('view engine','ejs');
 app.set('views',path.join(__dirname,'views'));
@@ -55,6 +58,10 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use(passport.setAuthenticatedUser);
+
+
+app.use(flash());//flash
+app.use(customMware.setFlash);
 
 app.use('/',require('./routes/index'));
 app.listen(port,function(error){

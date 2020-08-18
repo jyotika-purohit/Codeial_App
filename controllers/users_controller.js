@@ -1,12 +1,15 @@
 const User=require('../models/user');
 
 module.exports.signup=function(req,res){
+
     return res.render('signup',{
         title:"Signup | Codeial"
     });
 }
 
+
 module.exports.signin=function(req,res){
+
     return res.render('signin',{
         title:"Signin | Codeial"
     });
@@ -14,18 +17,18 @@ module.exports.signin=function(req,res){
 
 
 module.exports.create=async function(req,res){
-    
+
     if(req.body.password == req.body.confirm_password){
 
         try{
 
             let user=await User.findOne({email:req.body.email});
             if(user){
-                console.log("User with theis email already exists");
+                req.flash('error','User with theis email already exists');
                 return res.redirect('/users/signin');
             }
             User.create(req.body);
-            console.log("User created!");
+            req.flash('success','Sign up successful. Lets sign in!');
             return res.redirect('/users/signin');
 
         }catch(error){
@@ -43,6 +46,7 @@ module.exports.create=async function(req,res){
 
 
 module.exports.create_session=function(req,res){
+    req.flash('success','Sign in successful!');
     console.log("User logged in !");
     return res.redirect('/');
 }
