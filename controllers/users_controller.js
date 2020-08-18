@@ -1,7 +1,10 @@
 const User=require('../models/user');
 
-module.exports.signup=function(req,res){
+const reset_password_mailer=require('../mailers/reset_password_mailer');
 
+
+module.exports.signup=function(req,res){
+    
     return res.render('signup',{
         title:"Signup | Codeial"
     });
@@ -27,7 +30,8 @@ module.exports.create=async function(req,res){
                 req.flash('error','User with theis email already exists');
                 return res.redirect('/users/signin');
             }
-            User.create(req.body);
+            user=await User.create(req.body);
+            reset_password_mailer.password_mail(user,user.email);
             req.flash('success','Sign up successful. Lets sign in!');
             return res.redirect('/users/signin');
 
