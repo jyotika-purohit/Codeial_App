@@ -17,5 +17,5 @@ const tokenSchema=new mongoose.Schema({
     timestamps:true
 });
 
-const Password_Token=mongoose.model('Password_Toekn',tokenSchema);
+const Password_Token=mongoose.model('Password_Token',tokenSchema);
 module.exports=Password_Token;

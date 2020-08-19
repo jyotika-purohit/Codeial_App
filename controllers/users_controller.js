@@ -37,13 +37,13 @@ module.exports.create=async function(req,res){
 
         }catch(error){
 
-            console.log("Error:",error);
+            req.flash('error',error);
             return res.redirect('/');
 
         }
 
     }else{
-        console.log("Password and Confirm Password don't match");
+        req.flash('error',"Password and Confirm Password don't match");
         return res.redirect('back');
     }
 }
@@ -51,19 +51,16 @@ module.exports.create=async function(req,res){
 
 module.exports.create_session=function(req,res){
     req.flash('success','Sign in successful!');
-    console.log("User logged in !");
     return res.redirect('/');
 }
 
 module.exports.signout=function(req,res){
     req.logout();
+    req.flash('success','Sign out successful!');
     return res.redirect('/');
 }
 
-// module.exports.resetPassword=function(req,res){
-//     let user=User.findOne({email:req.params.useremail});
 
-// }
 
 // ------------------- Forgot password
 module.exports.forgot_password_opt=function(req,res){
@@ -75,7 +72,6 @@ module.exports.forgot_password_opt=function(req,res){
 
 module.exports.send_password_recovery_mail=async function(req,res){
     try{
-        console.log(req.body);
         let user=await User.findOne({email:req.body.email});
         if(user){
             
@@ -93,7 +89,7 @@ module.exports.send_password_recovery_mail=async function(req,res){
 
         return res.redirect('/');
     }catch(error){
-        console.log("Error -- ",error);
+        req.flash('error',error);
         return res.redirect('back');
     }
 }

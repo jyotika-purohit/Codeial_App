@@ -20,7 +20,7 @@
         width: 85%;
         margin: 0%;
         text-align: center;
-        color: orangered;
+        color: #202222;
         font-family: cursive;
         font-size: 40px; }
     #signup-signin-container #signup-signin form {
@@ -38,17 +38,18 @@
         background-color: whitesmoke;
         padding-inline-start: 10px; }
         #signup-signin-container #signup-signin form input:focus {
-          outline-color: #fc936d;
+          outline-color: cyan;
           outline-width: 1px; }
       #signup-signin-container #signup-signin form button {
         margin-top: 70px;
-        border: 2px solid orangered;
-        background-color: white;
-        color: orangered;
+        border: 2px solid black;
+        background-color: black;
+        color: cyan;
         font-weight: 700;
         letter-spacing: 0.05rem;
         height: 50px; }
         #signup-signin-container #signup-signin form button:hover {
-          color: white;
+          color: black;
           cursor: pointer;
-          background-color: #fc703d; }
+          background-color: cyan;
+          border: 2px solid cyan; }

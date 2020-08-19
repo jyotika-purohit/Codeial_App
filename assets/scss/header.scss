@@ -1,0 +1,42 @@
+a{
+    text-decoration:none;
+}
+#header-container{
+
+    width: 100%;
+    height: 60px;
+    // height: auto;
+    background:linear-gradient(to right,lightskyblue,rgb(79, 252, 79),rgb(79, 252, 180),cyan,lightpink);
+    color: black;
+
+    #header-inner-container{
+        position:fixed;
+        height: 50px;
+        // height: auto;
+        opacity: 0.8;
+        top: 0px;
+        width: 100%;
+        background-color: whitesmoke;
+        color: black;
+        &>*{
+            display: inline-block;
+            height: 100%;
+            width: 20%;
+            text-align: center;
+            color: inherit;
+            &>*{
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                &:hover{
+                    background-color: black;
+                    color: white;
+                }
+            }
+        }
+
+    }
+
+}

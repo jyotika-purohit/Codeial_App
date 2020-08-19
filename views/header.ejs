@@ -1,13 +1,18 @@
-<div>
-    <% if(locals.localuser) { %>
+<div id="header-container">
+    <div id="header-inner-container">
+        <!-- <div id="header-contents"> -->
+            <% if(locals.localuser) { %>
 
-        <a href="/">Home</a>
-        <a href="/users/signout">Sign out</a>
+                <a href="/"><span>Home</span>  </a>
+                <a href="/users/signout"> <span>Sign out</span>  </a>
+        
+            <% } else { %>
+        
+                <a href="/users/signup"><span>Sign up</span>  </a>
+                <a href="/users/signin"> <span>Sign in</span> </a>
+        
+            <% } %>
+        <!-- </div> -->
 
-    <% } else { %>
-
-        <a href="/users/signup">Sign up</a>
-        <a href="/users/signin">Sign in</a>
-
-    <% } %>
+    </div>
 </div>
