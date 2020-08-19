@@ -15,7 +15,7 @@ passport.use(new googleStrategy({
                 return;
             }
 
-            console.log(profile);
+            // console.log(profile);
             if(user){
                 return done(null,user);
             }else{
