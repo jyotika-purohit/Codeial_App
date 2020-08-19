@@ -40,6 +40,12 @@
         #signup-signin-container #signup-signin form input:focus {
           outline-color: cyan;
           outline-width: 1px; }
+      #signup-signin-container #signup-signin form #forgot-password {
+        text-decoration: underline;
+        color: #006eff;
+        text-align: center; }
+        #signup-signin-container #signup-signin form #forgot-password:hover {
+          color: blue; }
       #signup-signin-container #signup-signin form button {
         margin-top: 70px;
         border: 2px solid black;
