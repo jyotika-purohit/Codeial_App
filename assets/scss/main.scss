@@ -27,6 +27,7 @@
             background-color: whitesmoke;
             display: block;
             margin: 5px auto;
+            margin-right: 10px;
             width: 150px;
             border: none;
             border-radius: 20px;
@@ -35,6 +36,9 @@
             &:hover{
                 cursor: pointer;
                 box-shadow: none;
+            }
+            &:focus{
+                outline: none;
             }
             span{
                 display: flex;

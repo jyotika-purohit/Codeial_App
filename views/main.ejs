@@ -1,14 +1,20 @@
 <link rel="stylesheet" href="/css/main.css">
 <main>
-    <div id="new-post-form-container">
-        <form action="/posts/create" method="POST" id="new-post-form">
-            <textarea name="post-content" placeholder="Add Post here.."  required></textarea>
-            <button type="submit">
-                <span>
-                    <div><h4 >Add Post</h4></div> 
-                    <div><img src="https://image.flaticon.com/icons/svg/929/929926.svg" alt="post-icon"></div>
-                </span>
-             </button>
-        </form>
-    </div>
+    <% if(locals.localuser) { %>
+
+        <div id="new-post-form-container">
+            <form action="/posts/create" method="POST" id="new-post-form">
+                <textarea name="post_content" placeholder="Add Post here.."  required></textarea>
+                <button type="submit">
+                    <span>
+                        <div><h4 >Add Post</h4></div> 
+                        <div><img src="https://image.flaticon.com/icons/svg/929/929926.svg" alt="post-icon"></div>
+                    </span>
+                 </button>
+            </form> 
+        </div>
+
+    <%} %>
+    
+    <%-include('posts');-%>
 </main>

@@ -26,6 +26,7 @@
       background-color: whitesmoke;
       display: block;
       margin: 5px auto;
+      margin-right: 10px;
       width: 150px;
       border: none;
       border-radius: 20px;
@@ -34,6 +35,8 @@
       #new-post-form-container form button:hover {
         cursor: pointer;
         box-shadow: none; }
+      #new-post-form-container form button:focus {
+        outline: none; }
       #new-post-form-container form button span {
         display: flex;
         justify-content: space-evenly;

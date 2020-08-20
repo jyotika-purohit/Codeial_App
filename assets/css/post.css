@@ -1,0 +1,14 @@
+.post {
+  padding: 3px;
+  border: 1px solid black; }
+  .post .name-delete-opt {
+    display: flex;
+    justify-content: space-between; }
+    .post .name-delete-opt p {
+      width: 80%; }
+    .post .name-delete-opt a {
+      width: 10%;
+      height: 15px; }
+      .post .name-delete-opt a img {
+        height: 100%;
+        width: 100%; }
