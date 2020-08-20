@@ -1,3 +1,20 @@
 body {
   margin: 0px;
   padding: 0px; }
+
+#main-body {
+  display: flex;
+  justify-content: space-between; }
+  #main-body > * {
+    height: 1000px; }
+  #main-body #left-aside {
+    width: 15%;
+    display: inline-block;
+    vertical-align: top; }
+  #main-body main {
+    width: 50%;
+    display: inline-block; }
+  #main-body #right-aside {
+    width: 30%;
+    display: inline-block;
+    vertical-align: top; }

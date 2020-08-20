@@ -1,4 +1,32 @@
 body{
     margin: 0px;
     padding:0px;
+
 }
+#main-body{
+    display: flex;
+    justify-content:space-between ;
+    &>*{
+        height: 1000px;
+    }
+    #left-aside{
+        width: 15%;
+        display: inline-block;
+        // border: 1px solid greenyellow;
+        vertical-align: top;
+    }
+    
+    main{
+        width: 50%;
+        display: inline-block;
+        // border: 1px solid red;
+    }
+    
+    #right-aside{
+        width: 30%;
+        display: inline-block;
+        // border: 1px solid yellow;
+        vertical-align: top;
+    }
+}
+

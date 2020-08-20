@@ -59,3 +59,17 @@
           cursor: pointer;
           background-color: cyan;
           border: 2px solid cyan; }
+      #signup-signin-container #signup-signin form .google-login-btn {
+        height: 40px;
+        width: 200px;
+        border: none;
+        background-color: #94fd2c;
+        border-radius: 20px;
+        color: black;
+        margin: 20px auto; }
+        #signup-signin-container #signup-signin form .google-login-btn a {
+          text-decoration: none;
+          color: inherit; }
+        #signup-signin-container #signup-signin form .google-login-btn:hover {
+          border: none;
+          background-color: #4285f4; }
