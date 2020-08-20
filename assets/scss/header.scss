@@ -34,6 +34,23 @@ a{
                     background-color: black;
                     color: white;
                 }
+                
+            }
+            #go-to-profile-opt-con{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+                #go-to-profile-opt{
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    img{
+                        height: 30px;
+                        width: 30px;
+                    }
+                }
             }
         }
         

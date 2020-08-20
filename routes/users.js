@@ -24,5 +24,6 @@ router.get('/auth/google',passport.authenticate('google',{scope : ['profile','em
 
 router.get('/auth/google/callback',passport.authenticate('google',{failureRedirect:'/users/signin'}),users_controller.create_session);
 //-------------------------------------------
+router.get('/profile/:user_id',users_controller.profile);
 
 module.exports=router;

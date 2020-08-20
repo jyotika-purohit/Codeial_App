@@ -4,7 +4,9 @@ const crypto=require('crypto');
 const reset_password_mailer=require('../mailers/reset_password_mailer');
 
 module.exports.signup=function(req,res){
-    
+    if(req.isAuthenticated()){
+        return res.redirect('/');
+    }
     return res.render('signup',{
         title:"Signup | Codeial"
     });
@@ -12,7 +14,10 @@ module.exports.signup=function(req,res){
 
 
 module.exports.signin=function(req,res){
-
+    if(req.isAuthenticated()){
+        return res.redirect('/');
+    }
+    
     return res.render('signin',{
         title:"Signin | Codeial"
     });
@@ -126,6 +131,25 @@ module.exports.set_new_password=async function(req,res){
 
     }else{
         req.flash('error','Password and Confirm Password do not match!');
+        return res.redirect('back');
+    }
+}
+
+
+module.exports.profile=async function(req,res){
+    try{
+
+        console.log(typeof(req.params.user_id));
+
+        let user=await User.findById(req.params.user_id).select('name email');
+        console.log(user);
+        return res.render('profile',{
+            title:"Profile | Codeial",
+            user:user
+        });
+
+    }catch(error){
+        req.flash('error',error);
         return res.redirect('back');
     }
 }

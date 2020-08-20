@@ -29,3 +29,16 @@ a {
         #header-container #header-inner-container > * > *:hover {
           background-color: black;
           color: white; }
+      #header-container #header-inner-container > * #go-to-profile-opt-con {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly; }
+        #header-container #header-inner-container > * #go-to-profile-opt-con #go-to-profile-opt {
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center; }
+          #header-container #header-inner-container > * #go-to-profile-opt-con #go-to-profile-opt img {
+            height: 30px;
+            width: 30px; }

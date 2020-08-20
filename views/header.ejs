@@ -5,6 +5,15 @@
 
                 <a href="/"><span>Home</span>  </a>
                 <a href="/users/signout"> <span>Sign out</span>  </a>
+                <a href="/users/profile/<%=locals.localuser._id%>" title="My profile">
+                    <span id="go-to-profile-opt-con">
+                        <div id="go-to-profile-opt">
+                            <%= locals.localuser.name %> 
+                        </div>
+                        <div id="go-to-profile-opt">
+                            <img src="https://image.flaticon.com/icons/svg/492/492572.svg" alt="profile-icon">
+                        </div>
+                    </span>  </a>
         
             <% } else { %>
         
@@ -12,6 +21,7 @@
                 <a href="/users/signin"> <span>Sign in</span> </a>
         
             <% } %>
+
         <!-- </div> -->
 
     </div>
