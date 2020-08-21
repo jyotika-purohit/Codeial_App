@@ -1,0 +1,10 @@
+<div>
+    <ul>
+        <%for(comment of post.comments) { %>
+            <li>
+                <p><%=comment.user.name%></p>
+                <p><%=comment.content%></p>
+            </li>    
+        <% } %>
+    </ul>
+</div>
