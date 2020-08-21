@@ -14,7 +14,7 @@
                 <p><%= post.content %></p>
                 
                 <% if(locals.localuser) { %>
-                    <form action="/comments/create" id="new-comment-form">
+                    <form action="/comments/create/<%=post.id%>" id="new-comment-form" method="POST">
                         <input type="text" name="comment_content" placeholder="Add Comment .." required>
                         <button type="submit">Add</button>
                     </form>

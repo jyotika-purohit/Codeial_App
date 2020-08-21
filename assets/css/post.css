@@ -1,6 +1,7 @@
 .post {
   padding: 3px;
-  border: 1px solid black; }
+  border: 1px solid black;
+  margin: 5px auto; }
   .post .name-delete-opt {
     display: flex;
     justify-content: space-between; }

@@ -139,10 +139,8 @@ module.exports.set_new_password=async function(req,res){
 module.exports.profile=async function(req,res){
     try{
 
-        console.log(typeof(req.params.user_id));
 
         let user=await User.findById(req.params.user_id).select('name email');
-        console.log(user);
         return res.render('profile',{
             title:"Profile | Codeial",
             user:user
