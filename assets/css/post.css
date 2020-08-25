@@ -7,6 +7,17 @@
     border: 1px solid #eeeeee;
     border-radius: 10px;
     margin: 20px auto; }
+    #post-ul .post .post-likes {
+      margin: 10px; }
+      #post-ul .post .post-likes a img {
+        height: 25px;
+        width: 25px;
+        padding: 5px;
+        border-radius: 50%; }
+        #post-ul .post .post-likes a img:hover {
+          cursor: pointer;
+          padding: 5px;
+          box-shadow: 1px 1px 5px black; }
     #post-ul .post form {
       height: auto;
       padding: 10px;
@@ -38,12 +49,12 @@
       border-bottom: 1px solid #eeeeee; }
       #post-ul .post .name-delete-opt-post p {
         width: 80%; }
-      #post-ul .post .name-delete-opt-post a {
+      #post-ul .post .name-delete-opt-post .delete-post-btn {
         width: 10%;
         height: 15px; }
-        #post-ul .post .name-delete-opt-post a img {
+        #post-ul .post .name-delete-opt-post .delete-post-btn img {
           height: 100%;
           width: 25px; }
-          #post-ul .post .name-delete-opt-post a img:hover {
+          #post-ul .post .name-delete-opt-post .delete-post-btn img:hover {
             border-bottom: 1px solid blue;
             padding-bottom: 10px; }

@@ -10,6 +10,7 @@ a{
     color: black;
 
     #header-inner-container{
+        z-index: 2000;
         position:fixed;
         height: 50px;
         // height: auto;

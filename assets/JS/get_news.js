@@ -5,7 +5,7 @@ $.ajax({
     'apiKey=0e47546fdc5a4e1bbc29a0ab34251404',
     type:'get',
     success:function(data){
-        console.log(data);
+        // console.log(data);
         for(i=0;i<=5;i++){
 
             if(i == data.articles.length ){

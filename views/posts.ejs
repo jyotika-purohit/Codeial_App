@@ -4,12 +4,28 @@
         <% for(post of all_posts) { %>
         <li>
             <div class="post">
+                
                 <div class="name-delete-opt-post">
-                    <h3><%= post.user.name %></h3>
+                    <div>
+                        <h3><%= post.user.name %></h3>
+
+                        <div class="post-likes">
+                            
+                            <% if(post.likes.length > 0) { %>
+                                <span ><%=post.likes.length%></span> Likes
+                            <% } %>
+
+                            <% if(locals.localuser) { %>
+                                <a href="/likes/post/<%=post.id%>" title="like-post"><img  src="https://image.flaticon.com/icons/svg/456/456115.svg" alt="like-icon"></a>    
+                            <% } %>
+                        </div>
+
+                    </div>
 
                     <% if( locals.localuser && locals.localuser.id == post.user.id) { %>
-                        <a href="/posts/delete/<%= post.id %>" title="delete-post" ><img src="https://image.flaticon.com/icons/svg/747/747953.svg" alt="delete-post-opt"></a>    
+                        <a href="/posts/delete/<%= post.id %>" title="delete-post" class="delete-post-btn"><img src="https://image.flaticon.com/icons/svg/747/747953.svg" alt="delete-post-opt"></a>    
                     <% } %>
+                    
                 </div>
                 <p><%= post.content %></p>
                 

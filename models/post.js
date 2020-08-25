@@ -6,12 +6,16 @@ const postSchema= new mongoose.Schema({
         required:true
     },
     user:{
-        type:mongoose.SchemaTypes.ObjectId,
+        type:mongoose.Schema.Types.ObjectId,
         ref:'User'
     },
     comments:[{
-        type:mongoose.SchemaTypes.ObjectId,
+        type:mongoose.Schema.Types.ObjectId,
         ref:'Comment'
+    }],
+    likes:[{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:'Like'
     }]
 },{
     timestamps:true
