@@ -5,16 +5,15 @@ body {
 #main-body {
   display: flex;
   justify-content: space-between; }
-  #main-body > * {
-    height: 1000px; }
   #main-body #left-aside {
-    width: 15%;
+    padding: 10px;
+    width: 25%;
     display: inline-block;
     vertical-align: top; }
   #main-body main {
     width: 50%;
     display: inline-block; }
   #main-body #right-aside {
-    width: 30%;
+    width: 20%;
     display: inline-block;
     vertical-align: top; }

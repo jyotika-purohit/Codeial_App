@@ -12,6 +12,7 @@ const customMware=require('./config/middleware');
 const passportGoogle=require('./config/passport-google-oauth2-strategy'); //google-oauth-strategy
 
 
+
 app.set('view engine','ejs');
 app.set('views',path.join(__dirname,'views'));
 var sassMiddleware = require('node-sass-middleware');

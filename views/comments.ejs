@@ -4,7 +4,13 @@
             <li>
                 <p><%=comment.user.name%></p>
                 <p><%=comment.content%></p>
-            </li>    
+
+                <% if( (locals.localuser && locals.localuser.id==post.user.id) || (locals.localuser && locals.localuser.id==comment.user.id) ) { %>
+
+                    <a href="/comments/delete/<%=comment.id %>" title="delete-comment" ><img style="height: 20px;widows: 20px;" src="https://image.flaticon.com/icons/svg/747/747953.svg" alt="delete-comment-opt"></a>    
+                
+                <% } %>
+                </li>    
         <% } %>
     </ul>
 </div>

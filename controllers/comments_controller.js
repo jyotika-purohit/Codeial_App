@@ -12,7 +12,6 @@ module.exports.create =async function(req,res){
             user:req.user._id
         });
 
-
         let post=await Post.findByIdAndUpdate(req.params.post_id,{$push :{comments:comment}});
         post.save();
 
@@ -20,6 +19,21 @@ module.exports.create =async function(req,res){
         req.flash('success','Comment published!');
         return res.redirect('back');
 
+    }catch(error){
+        req.flash('error',error);
+        return res.redirect('back');
+    }
+}
+
+module.exports.delete=async function(req,res){
+    try{
+        let comment= await Comment.findById(req.params.comment_id);
+        let post=await Post.findByIdAndUpdate(comment.post,{$pull :{comments:req.params.comment_id}});
+        post.save();
+        comment.remove();
+        req.flash('success',"Comment Deleted!");
+        return res.redirect('back');
+         
     }catch(error){
         req.flash('error',error);
         return res.redirect('back');

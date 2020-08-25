@@ -6,11 +6,10 @@ body{
 #main-body{
     display: flex;
     justify-content:space-between ;
-    &>*{
-        height: 1000px;
-    }
+    
     #left-aside{
-        width: 15%;
+        padding:10px;
+        width: 25%;
         display: inline-block;
         // border: 1px solid greenyellow;
         vertical-align: top;
@@ -23,7 +22,7 @@ body{
     }
     
     #right-aside{
-        width: 30%;
+        width: 20%;
         display: inline-block;
         // border: 1px solid yellow;
         vertical-align: top;
