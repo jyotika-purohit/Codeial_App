@@ -1,10 +1,13 @@
 <link rel="stylesheet" href="/css/post.css">
 <div>
     <ul id="post-ul" >
+        
         <% for(post of all_posts) { %>
         <li>
             <div class="post">
                 
+                
+
                 <div class="name-delete-opt-post">
                     <div>
                         <h3><%= post.user.name %></h3>
@@ -12,12 +15,32 @@
                         <div class="post-likes">
                             
                             <% if(post.likes.length > 0) { %>
-                                <span ><%=post.likes.length%></span> Likes
+                                <div>
+                                    <div>
+                                        <span ><%=post.likes.length%></span> Likes
+                                    </div>
+                                </div>
                             <% } %>
 
                             <% if(locals.localuser) { %>
-                                <a href="/likes/post/<%=post.id%>" title="like-post"><img  src="https://image.flaticon.com/icons/svg/456/456115.svg" alt="like-icon"></a>    
-                            <% } %>
+                                
+                                <% let flag=false;%>
+                                <%for(like of post.likes) { %>
+                                    
+                                    <%if(like.user.id == locals.localuser.id) { %>
+                                        <%flag=true;%>
+                                        <%break;%>
+                                    <% } %>
+
+                                <% } %>
+
+                                <%if(flag == false) { %>
+                                    <a href="/likes/post/<%=post.id%>" title="like-post"><img  src="https://image.flaticon.com/icons/svg/1216/1216575.svg" alt="like-icon"></a>    
+                                <% }else{ %>
+                                    <a href="" title="unlike-post"><img  src="https://image.flaticon.com/icons/svg/1076/1076984.svg" alt="liked-icon"></a>    
+                                <%} %>
+
+                                 <% } %>
                         </div>
 
                     </div>

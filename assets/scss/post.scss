@@ -17,13 +17,13 @@
                 width: 25px;
                 padding: 5px;
                 // border-radius: 16px 18px;
-                border-radius: 50%;
+                border-radius: 30%;
                 
                 &:hover{
                     cursor: pointer;
-                    padding: 5px;
-                    // border: 1px solid black;
-                    box-shadow: 1px 1px 5px black;
+                    padding: 4px;
+                    border: 1px solid black;
+                    // box-shadow: 1px 1px 5px black;
                 }
             }
             
@@ -80,6 +80,19 @@
                     border-bottom: 1px solid blue;
                     padding-bottom: 10px;
                 }
+            }
+        }
+        .post-likes{
+            display: flex;
+            justify-content: space-evenly;
+            height: 40px;
+            width: 100px;
+            &>*{
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
             }
         }
     }
