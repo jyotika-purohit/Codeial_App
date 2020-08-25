@@ -1,16 +1,20 @@
+<link rel="stylesheet" href="/css/comment.css">
 <div>
-    <ul>
+    <ul id="comment-ul">
         <%for(comment of post.comments) { %>
-            <li>
-                <p><%=comment.user.name%></p>
+            <li class="comment">
+               
+                    <h4><%=comment.user.name%></h4>
+                    <% if( (locals.localuser && locals.localuser.id==post.user.id) || (locals.localuser && locals.localuser.id==comment.user.id) ) { %>
+
+                        <a href="/comments/delete/<%=comment.id %>" title="delete-comment" class="delete-comment-btn" ><img style="height: 20px;widows: 20px;" src="https://image.flaticon.com/icons/svg/594/594864.svg" alt="delete-comment-opt"></a>    
+                    
+                    <% } %>
+                
                 <p><%=comment.content%></p>
 
-                <% if( (locals.localuser && locals.localuser.id==post.user.id) || (locals.localuser && locals.localuser.id==comment.user.id) ) { %>
-
-                    <a href="/comments/delete/<%=comment.id %>" title="delete-comment" ><img style="height: 20px;widows: 20px;" src="https://image.flaticon.com/icons/svg/747/747953.svg" alt="delete-comment-opt"></a>    
                 
-                <% } %>
-                </li>    
+            </li>    
         <% } %>
     </ul>
 </div>

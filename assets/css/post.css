@@ -1,15 +1,49 @@
-.post {
-  padding: 3px;
-  border: 1px solid black;
-  margin: 5px auto; }
-  .post .name-delete-opt {
-    display: flex;
-    justify-content: space-between; }
-    .post .name-delete-opt p {
-      width: 80%; }
-    .post .name-delete-opt a {
-      width: 10%;
-      height: 15px; }
-      .post .name-delete-opt a img {
-        height: 100%;
-        width: 100%; }
+#post-ul {
+  list-style-type: none;
+  padding: 0px; }
+  #post-ul .post {
+    background-color: whitesmoke;
+    padding: 5px;
+    border: 1px solid #eeeeee;
+    border-radius: 10px;
+    margin: 20px auto; }
+    #post-ul .post form {
+      height: auto;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between; }
+      #post-ul .post form input {
+        padding-inline-start: 10px;
+        height: 40px;
+        width: 90%;
+        border-radius: 20px;
+        border: 1px solid #eeeeee; }
+        #post-ul .post form input:focus {
+          outline: 0px; }
+      #post-ul .post form button {
+        width: 50px;
+        height: 30px;
+        border: none;
+        margin-left: 10px;
+        margin-top: 5px;
+        background-color: #85faae; }
+        #post-ul .post form button:focus {
+          outline: none; }
+        #post-ul .post form button:hover {
+          border: 1px solid black;
+          cursor: pointer; }
+    #post-ul .post .name-delete-opt-post {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #eeeeee; }
+      #post-ul .post .name-delete-opt-post p {
+        width: 80%; }
+      #post-ul .post .name-delete-opt-post a {
+        width: 10%;
+        height: 15px; }
+        #post-ul .post .name-delete-opt-post a img {
+          height: 100%;
+          width: 25px; }
+          #post-ul .post .name-delete-opt-post a img:hover {
+            border-bottom: 1px solid blue;
+            padding-bottom: 10px; }

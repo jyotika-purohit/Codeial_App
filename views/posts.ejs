@@ -1,11 +1,11 @@
 <link rel="stylesheet" href="/css/post.css">
 <div>
-    <ul>
+    <ul id="post-ul" >
         <% for(post of all_posts) { %>
         <li>
             <div class="post">
-                <div class="name-delete-opt">
-                    <p><%= post.user.name %></p>
+                <div class="name-delete-opt-post">
+                    <h3><%= post.user.name %></h3>
 
                     <% if( locals.localuser && locals.localuser.id == post.user.id) { %>
                         <a href="/posts/delete/<%= post.id %>" title="delete-post" ><img src="https://image.flaticon.com/icons/svg/747/747953.svg" alt="delete-post-opt"></a>    

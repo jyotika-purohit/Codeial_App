@@ -1,10 +1,49 @@
-.post{
-    padding:3px;
-    border: 1px solid black;
-    margin: 5px auto;
-    .name-delete-opt{
+
+#post-ul{
+    list-style-type: none;
+    padding: 0px;
+    .post{
+    background-color: whitesmoke;
+    padding:5px;
+    border: 1px solid rgb(238, 238, 238);
+    border-radius: 10px;
+    margin: 20px auto;
+    form{
+        height: auto;
+        padding: 10px;
         display: flex;
         justify-content: space-between;
+        input{
+            
+            padding-inline-start:10px;
+            height: 40px;
+            width: 90%;
+            border-radius: 20px;
+            border: 1px solid rgb(238, 238, 238);
+            &:focus{
+                outline: 0px;
+            }
+        }
+        button{
+            width: 50px;
+            height: 30px;
+            border: none;
+            margin-left: 10px;
+            margin-top: 5px;
+            background-color: #85faae;
+            &:focus{
+                outline: none;
+            }
+            &:hover{
+                border: 1px solid black;
+                cursor: pointer;
+            }
+        }
+    }
+    .name-delete-opt-post{
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid rgb(238, 238, 238);
         p{
             width: 80%;
         }
@@ -13,9 +52,14 @@
             height: 15px;
             img{
                 height: 100%;
-                width: 100%;
-                
+                width: 25px;
+                &:hover{
+                    // box-shadow: 1px 1px 10px black;
+                    border-bottom: 1px solid blue;
+                    padding-bottom: 10px;
+                }
             }
         }
     }
+}
 }
