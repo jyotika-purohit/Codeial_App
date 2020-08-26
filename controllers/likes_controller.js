@@ -28,3 +28,26 @@ module.exports.like_post=async function(req,res){
         return res.redirect('back');
     }
 }
+
+module.exports.unlike_post=async function(req,res){
+    try{
+        let this_like=await Like.findById(req.params.like_id);
+        let type;
+
+        if(this_like.onModel == "Post"){
+            type=Post;
+        }else{
+            type=Comment;
+        }
+
+        let record = await type.findByIdAndUpdate(this_like.likeable,{$pull:{likes:this_like._id}});
+        record.save();
+        this_like.remove();
+
+        req.flash('success',"Like removed");
+        return res.redirect('back');
+    }catch(error){
+        req.flash('error',error);
+        return res.redirect('back');
+    }
+}

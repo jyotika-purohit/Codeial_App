@@ -25,19 +25,21 @@
                             <% if(locals.localuser) { %>
                                 
                                 <% let flag=false;%>
+                                <% let like_id;%>
                                 <%for(like of post.likes) { %>
                                     
                                     <%if(like.user.id == locals.localuser.id) { %>
                                         <%flag=true;%>
+                                        <% like_id= like.id%>
                                         <%break;%>
                                     <% } %>
 
                                 <% } %>
 
                                 <%if(flag == false) { %>
-                                    <a href="/likes/post/<%=post.id%>" title="like-post"><img  src="https://image.flaticon.com/icons/svg/1216/1216575.svg" alt="like-icon"></a>    
+                                    <a href="/likes/post/<%=post.id%>" title="like-post"><img  src="https://image.flaticon.com/icons/svg/1216/1216575.svg" alt="like-icon">Like</a>    
                                 <% }else{ %>
-                                    <a href="" title="unlike-post"><img  src="https://image.flaticon.com/icons/svg/1076/1076984.svg" alt="liked-icon"></a>    
+                                    <a href="/likes/remove-like/<%=like_id%>" title="unlike-post"><img  src="https://image.flaticon.com/icons/svg/1076/1076984.svg" alt="liked-icon"></a>    
                                 <%} %>
 
                                  <% } %>

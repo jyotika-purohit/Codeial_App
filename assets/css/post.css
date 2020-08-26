@@ -17,7 +17,7 @@
         #post-ul .post .post-likes a img:hover {
           cursor: pointer;
           padding: 4px;
-          border: 1px solid black; }
+          border: 1px solid lightgrey; }
     #post-ul .post form {
       height: auto;
       padding: 10px;
