@@ -9,7 +9,6 @@ exports.friendshipMail = (from,to) => {
         subject: "Codeial | New Friend Request!", // Subject line
         html: htmlString, // html body
     },(error,info) => {
-        
         if(error){
             console.log("Error:",error);
             return;
