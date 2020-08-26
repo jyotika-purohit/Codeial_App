@@ -85,21 +85,45 @@
             }
 
             .google-login-btn{
-                a{
-                    text-decoration: none;
-                    color: inherit;
-                }
                 height: 40px;
-                width: 200px;
                 border: none;
-                background-color: rgb(148, 253, 44);
+                background-color: white;
+                color: black;
                 border-radius: 20px;
-                color: black ;
                 margin: 20px auto;
+                width: 220px;
+                padding: 5px;
+                display: flex;
+                justify-content: space-between;
+                &>*{
+                    display: flex;
+                    flex-direction: column;
+                    height: 100%;
+                    align-items: center;
+                    justify-content: center;
+                    color: black;
+                    
+                }
+                div{
+                    img{
+                    height: 20px;
+                    width: 20px;
+                    }
+                    a{
+                        text-decoration: none;
+                        // color: inherit;
+
+                    }
+                }
                 &:hover{
                     border: none;
-                    background-color: #4285f4;
+                    background-color: rgb(65, 65, 252);
+                    color: white ;   
+                    a{
+                        color: inherit;
+                    }
                 }
+                
             }
         }
     }

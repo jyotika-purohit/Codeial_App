@@ -61,15 +61,30 @@
           border: 2px solid cyan; }
       #signup-signin-container #signup-signin form .google-login-btn {
         height: 40px;
-        width: 200px;
         border: none;
-        background-color: #94fd2c;
-        border-radius: 20px;
+        background-color: white;
         color: black;
-        margin: 20px auto; }
-        #signup-signin-container #signup-signin form .google-login-btn a {
-          text-decoration: none;
-          color: inherit; }
+        border-radius: 20px;
+        margin: 20px auto;
+        width: 220px;
+        padding: 5px;
+        display: flex;
+        justify-content: space-between; }
+        #signup-signin-container #signup-signin form .google-login-btn > * {
+          display: flex;
+          flex-direction: column;
+          height: 100%;
+          align-items: center;
+          justify-content: center;
+          color: black; }
+        #signup-signin-container #signup-signin form .google-login-btn div img {
+          height: 20px;
+          width: 20px; }
+        #signup-signin-container #signup-signin form .google-login-btn div a {
+          text-decoration: none; }
         #signup-signin-container #signup-signin form .google-login-btn:hover {
           border: none;
-          background-color: #4285f4; }
+          background-color: #4141fc;
+          color: white; }
+          #signup-signin-container #signup-signin form .google-login-btn:hover a {
+            color: inherit; }

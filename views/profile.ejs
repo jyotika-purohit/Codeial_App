@@ -6,4 +6,9 @@
     <p>
         <%= user.email%>
     </p>
+    <% if(locals.localuser && user.id != locals.localuser.id) { %>
+        
+        <button type="submit"><a href="/friendship/create/<%=user.id%>">Add <%=user.name%> as Friend!</a></button>
+        
+    <% } %>
 </div>
