@@ -1,5 +1,6 @@
 const Like=require('../models/likes');
 const Post = require('../models/post');
+const Comment=require('../models/comment');
 
 module.exports.like_post=async function(req,res){
     try{
@@ -20,6 +21,7 @@ module.exports.like_post=async function(req,res){
         });
 
         let post=await Post.findByIdAndUpdate(req.params.post_id,{$push: {likes:like}});
+        post.save();
         req.flash('success','Post Liked!');
         return res.redirect('back');
     
@@ -29,7 +31,36 @@ module.exports.like_post=async function(req,res){
     }
 }
 
-module.exports.unlike_post=async function(req,res){
+module.exports.like_comment=async function(req,res){
+    try{
+        
+        let like= await Like.findOne({user:req.user._id,
+            likeable:req.params.comment_id,
+            onModel:'Comment'
+        });
+
+        if(like){ //user has already likes that post 
+            return res.redirect('back');
+        }
+
+        like=await Like.create({
+            user:req.user._id,
+            likeable:req.params.comment_id,
+            onModel:'Comment'
+        });
+
+        let comment=await Comment.findByIdAndUpdate(req.params.comment_id,{$push: {likes:like}});
+        comment.save();
+        req.flash('success','Comment Liked!');
+        return res.redirect('back');
+    
+    }catch(error){
+        req.flash('error',error);
+        return res.redirect('back');
+    }
+}
+
+module.exports.unlike=async function(req,res){
     try{
         let this_like=await Like.findById(req.params.like_id);
         let type;

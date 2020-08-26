@@ -8,9 +8,15 @@ module.exports.home=async function(req,res){
         .populate('user','name')
         .populate({
             path:'comments',
-            populate:{
+            populate:([{    //populating user and likes of comment so ([{path1},{path2}]) 
                 path:'user'
-            }
+            },
+            {
+                path:'likes',
+                    populate:{
+                        path:'user'
+                    }
+            }])
         })
         .populate({
             path:'likes',

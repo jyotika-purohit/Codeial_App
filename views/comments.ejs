@@ -3,8 +3,9 @@
     <ul id="comment-ul">
         <%for(comment of post.comments) { %>
             <li class="comment">
-               
+                
                     <h4><%=comment.user.name%></h4>
+                    
                     <% if( (locals.localuser && locals.localuser.id==post.user.id) || (locals.localuser && locals.localuser.id==comment.user.id) ) { %>
 
                         <a href="/comments/delete/<%=comment.id %>" title="delete-comment" class="delete-comment-btn" ><img style="height: 20px;widows: 20px;" src="https://image.flaticon.com/icons/svg/594/594864.svg" alt="delete-comment-opt"></a>    
@@ -13,6 +14,39 @@
                 
                 <p><%=comment.content%></p>
 
+                <div class="comment-likes">
+                            
+                    <% if(comment.likes.length > 0) { %>
+                        <div>
+                            <div>
+                                <span ><%=comment.likes.length%></span> Likes
+                            </div>
+                        </div>
+                    <% } %>
+
+                    <% if(locals.localuser) { %>
+
+                        <% let flag=false;%>
+                        <% let like_id;%>
+                        <%for(like of comment.likes) { %>
+                            
+                            <%if(like.user.id == locals.localuser.id) { %>
+                                <%flag=true;%>
+                                <% like_id= like.id%>
+                                <%break;%>
+                            <% } %>
+
+                        <% } %>
+
+                        <%if(flag == false) { %>
+                            <a href="/likes/comment/<%=comment.id%>" title="like-comment"><img  src="https://image.flaticon.com/icons/svg/633/633759.svg" alt="like-icon"></a>    
+                        <% }else{ %>
+                            <a href="/likes/remove-like/<%=like_id%>" title="unlike-comment"><img src="https://image.flaticon.com/icons/svg/633/633991.svg" alt="liked-icon"></a>    
+                        <%} %>
+
+                    <% } %>
+                </div>
+                
                 
             </li>    
         <% } %>

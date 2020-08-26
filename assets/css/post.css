@@ -62,7 +62,7 @@
         display: flex;
         justify-content: space-evenly;
         height: 40px;
-        width: 100px; }
+        width: 200px; }
         #post-ul .post .name-delete-opt-post .post-likes > * {
           height: 100%;
           display: flex;
