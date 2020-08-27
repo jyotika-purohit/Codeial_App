@@ -1,0 +1,92 @@
+#chatbox-container{
+    box-sizing: border-box;
+    overflow-y: scroll;
+    height: 330px;
+    width: 280px;
+    border: 1px solid black;
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    background-color: white;
+    
+
+    #min-max-div{
+        position: sticky;
+        top: 0%;
+        height: 40px;
+        width:100%;
+        background-color: orangered;
+        color: white;
+        &:hover{
+            color: black;
+        }
+
+    }
+
+    ul{
+        padding: 0px;
+        padding: 10px;
+    
+        .not-my-message{
+            
+            box-sizing: border-box;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            p{
+                padding: 5px;
+                width: 180px;
+                height: auto;
+                background-color: lightpink;
+                margin-left: 0%;
+            }
+
+        }
+
+        .my-message{
+            box-sizing: border-box;
+            width: 100%;
+            display: flex;
+            // justify-content: right;
+            flex-wrap: wrap-reverse;
+            flex-direction: row-reverse;
+            p{
+                
+                padding: 5px;
+                width: 180px;
+                height: auto;
+                background-color: lightskyblue;
+            }
+            
+        
+        }
+
+    }
+
+    form{
+        position: fixed;
+        bottom: 0%;
+        width: 280px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        input{
+            width: 200px;
+            // box-sizing: border-box;
+            height: 30px;
+            border: none;
+            border-top: 1px solid black;
+            padding-inline-start: 5px;
+            &:focus{
+                outline: none;
+            }
+        }
+        button{
+            width: 80px;
+            // box-sizing: border-box;
+            text-align: left;
+            border: 1px solid black;
+            background-color: greenyellow;
+        }
+    }
+}

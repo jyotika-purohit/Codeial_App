@@ -1,0 +1,64 @@
+#chatbox-container {
+  box-sizing: border-box;
+  overflow-y: scroll;
+  height: 330px;
+  width: 280px;
+  border: 1px solid black;
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  background-color: white; }
+  #chatbox-container #min-max-div {
+    position: sticky;
+    top: 0%;
+    height: 40px;
+    width: 100%;
+    background-color: orangered;
+    color: white; }
+    #chatbox-container #min-max-div:hover {
+      color: black; }
+  #chatbox-container ul {
+    padding: 0px;
+    padding: 10px; }
+    #chatbox-container ul .not-my-message {
+      box-sizing: border-box;
+      width: 100%;
+      display: flex;
+      flex-direction: row; }
+      #chatbox-container ul .not-my-message p {
+        padding: 5px;
+        width: 180px;
+        height: auto;
+        background-color: lightpink;
+        margin-left: 0%; }
+    #chatbox-container ul .my-message {
+      box-sizing: border-box;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap-reverse;
+      flex-direction: row-reverse; }
+      #chatbox-container ul .my-message p {
+        padding: 5px;
+        width: 180px;
+        height: auto;
+        background-color: lightskyblue; }
+  #chatbox-container form {
+    position: fixed;
+    bottom: 0%;
+    width: 280px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row; }
+    #chatbox-container form input {
+      width: 200px;
+      height: 30px;
+      border: none;
+      border-top: 1px solid black;
+      padding-inline-start: 5px; }
+      #chatbox-container form input:focus {
+        outline: none; }
+    #chatbox-container form button {
+      width: 80px;
+      text-align: left;
+      border: 1px solid black;
+      background-color: greenyellow; }
