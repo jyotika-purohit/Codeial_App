@@ -25,7 +25,11 @@ module.exports.home=async function(req,res){
             }
         }); 
 
-        let all_users=await User.find({}).select('name email friendships');
+        let all_users=await User.find({})
+        .populate({
+            path:'friendships'
+        })
+        .select('name email');
 
         return res.render('home',{
             title:"Home | Codeial",

@@ -1,8 +1,43 @@
+<link rel="stylesheet" href="/css/right-aside.css">
 <aside id="right-aside">
-    <ul>
-        <%for(user of all_users) { %>
-            
-            <a href="/users/profile/<%=user._id%>" title="profile" ><p><%= user.name %></p></a>    
+
+    <div id="my-friends-container">
+        <h4>My Friends</h4>
+        <% if(locals.localuser) { %>
+            <ul>
+                
+                <% for(user of all_users) { %>
+                    
+                    <% if(user.id == locals.localuser.id) { %>
+                        <% continue; %>
+                    <% } %>
+
+                    <% for(eachFriendship of user.friendships) { %>
+                      
+                        <% if( JSON.stringify(eachFriendship.from) == JSON.stringify(locals.localuser._id) ) { %>
+                            <a href="/users/profile/<%=user._id%>" title="profile" ><p><%= user.name %></p></a>    
+                            
+                        <% } else if (JSON.stringify(eachFriendship.to) == JSON.stringify(locals.localuser._id) ) { %>
+                            <a href="/users/profile/<%=user._id%>" title="profile" ><p><%= user.name %></p></a>    
+                        <% } %>
+
+                    <% } %>
+
+                <% } %>
+            </ul>
         <% } %>
-    </ul>
+
+    </div>
+
+    <hr>
+    <div id="all-users-container">
+
+        <h4>All Users</h4>
+        <ul>
+            <%for(user of all_users) { %>
+                
+                <a href="/users/profile/<%=user._id%>" title="profile" ><p><%= user.name %></p></a>    
+            <% } %>
+        </ul>
+    </div>
 </aside>

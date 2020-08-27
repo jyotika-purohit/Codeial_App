@@ -1,5 +1,5 @@
 #left-aside{
-    background-color: blanchedalmond;
+    background:linear-gradient(to bottom,#A770EF,#CF8BF3,#FDB99B);
     &::-webkit-scrollbar {
         width: 10px;
       }
@@ -20,7 +20,7 @@
         // letter-spacing: 0.2rem;
         text-align: center;
         -webkit-font-smoothing: antialiased;
-        color: black;
+        color: white;
         word-spacing: 0.5rem;
     }
     #news-container{
@@ -44,7 +44,7 @@
                 line-height: 1.3;
 
                 &:hover{
-                    color: blue;
+                    color: #272626;
                     text-decoration: underline;
                 }
             }
