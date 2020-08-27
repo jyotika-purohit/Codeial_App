@@ -1,39 +1,41 @@
 #profile-container {
   padding: 10px; }
-  #profile-container .add-friend-button, #profile-container .remove-friend-button {
-    display: flex;
-    flex-direction: column;
-    padding: 5px;
-    min-height: 40px;
-    height: auto;
-    width: 200px;
-    letter-spacing: 0.08rem;
-    font-size: 15px;
-    color: white;
-    border: none;
-    background-color: #be7efa;
-    box-shadow: 1px 1px 10px gray; }
-    #profile-container .add-friend-button > *, #profile-container .remove-friend-button > * {
-      display: block;
-      margin: 1px auto; }
-    #profile-container .add-friend-button:hover, #profile-container .remove-friend-button:hover {
-      padding: 4px;
-      cursor: pointer;
-      box-shadow: none;
-      border: 1px solid grey;
-      box-shadow: 0px 0px 10px #a5a3a3; }
-    #profile-container .add-friend-button a, #profile-container .remove-friend-button a {
-      text-decoration: none;
-      color: inherit; }
-    #profile-container .add-friend-button img, #profile-container .remove-friend-button img {
-      height: 25px;
-      width: 25px; }
-  #profile-container .remove-friend-button {
-    background-color: #f84949;
-    color: white; }
-    #profile-container .remove-friend-button:hover {
-      padding: 4px;
-      cursor: pointer;
-      box-shadow: none;
-      border: 1px solid red;
-      box-shadow: 0px 0px 10px #a5a3a3; }
+  #profile-container a {
+    text-decoration: none; }
+    #profile-container a .add-friend-button, #profile-container a .remove-friend-button {
+      display: flex;
+      flex-direction: column;
+      padding: 5px;
+      min-height: 40px;
+      height: auto;
+      width: 200px;
+      letter-spacing: 0.08rem;
+      font-size: 15px;
+      color: white;
+      border: none;
+      background-color: #be7efa;
+      box-shadow: 1px 1px 10px gray; }
+      #profile-container a .add-friend-button > *, #profile-container a .remove-friend-button > * {
+        display: block;
+        margin: 1px auto; }
+      #profile-container a .add-friend-button:hover, #profile-container a .remove-friend-button:hover {
+        padding: 4px;
+        cursor: pointer;
+        box-shadow: none;
+        border: 1px solid grey;
+        box-shadow: 0px 0px 10px #a5a3a3; }
+      #profile-container a .add-friend-button span, #profile-container a .remove-friend-button span {
+        text-decoration: none;
+        color: inherit; }
+      #profile-container a .add-friend-button img, #profile-container a .remove-friend-button img {
+        height: 25px;
+        width: 25px; }
+    #profile-container a .remove-friend-button {
+      background-color: #f84949;
+      color: white; }
+      #profile-container a .remove-friend-button:hover {
+        padding: 4px;
+        cursor: pointer;
+        box-shadow: none;
+        border: 1px solid red;
+        box-shadow: 0px 0px 10px #a5a3a3; }

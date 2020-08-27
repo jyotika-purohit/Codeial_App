@@ -3,4 +3,5 @@ const router=express.Router();
 const friendships_controller=require('../controllers/friendships_controller');
 router.get('/create/:to_id',friendships_controller.send_req);
 router.get('/accept/:from_id,:to_id',friendships_controller.create_friendship);
+router.get('/delete/:from_id,:to_id',friendships_controller.delete_friendship);
 module.exports=router;

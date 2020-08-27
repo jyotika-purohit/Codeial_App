@@ -21,23 +21,29 @@
 
     <% if ( (locals.localuser && user.id != locals.localuser.id) && flag==false) { %>
         
-        <button type="submit" class="add-friend-button">
-           
-                <img src="https://image.flaticon.com/icons/svg/2583/2583145.svg" alt="">
-           
-          
-                <a href="/friendship/create/<%=user.id%>">Add <%=user.name%> as Friend</a>
-          
-        </button>
+        <a href="/friendship/create/<%=user.id%>">
+
+            <button type="submit" class="add-friend-button">
+                
+                    <img src="https://image.flaticon.com/icons/svg/2583/2583145.svg" alt="">
+                
+                
+                    <span>Add <%=user.name%> as Friend</span>
+                
+            </button>
+        </a>
         
-    <% }else if(locals.localuser) { %>
-        <button type="submit" class="remove-friend-button">
-            
-                <img src="https://image.flaticon.com/icons/svg/3260/3260698.svg" alt="">
-            
-            
-                <a href="/friendship/delete/<%=locals.localuser.id%>,<%=user.id%>">REMOVE </a>
-            
-        </button>
+    <% }else if(locals.localuser && user.id != locals.localuser.id ) { %>
+
+        <a href="/friendship/delete/<%=locals.localuser.id%>,<%=user.id%>">
+            <button type="submit" class="remove-friend-button">
+                
+                    <img src="https://image.flaticon.com/icons/svg/3260/3260698.svg" alt="">
+                
+                
+                    <span>REMOVE </span>
+                
+            </button>
+        </a>
     <% } %>
 </div>
