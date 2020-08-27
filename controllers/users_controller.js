@@ -140,7 +140,12 @@ module.exports.profile=async function(req,res){
     try{
 
 
-        let user=await User.findById(req.params.user_id).select('name email');
+        let user=await User.findById(req.params.user_id)
+        .populate({
+            path:'friendships'
+        })
+        .select('name email');
+        
         return res.render('profile',{
             title:"Profile | Codeial",
             user:user

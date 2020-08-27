@@ -25,7 +25,7 @@ module.exports.home=async function(req,res){
             }
         }); 
 
-        let all_users=await User.find({}).select('name email');
+        let all_users=await User.find({}).select('name email friendships');
 
         return res.render('home',{
             title:"Home | Codeial",

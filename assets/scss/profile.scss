@@ -1,0 +1,53 @@
+#profile-container{
+    padding: 10px;
+    .add-friend-button,.remove-friend-button{
+        display: flex;
+        flex-direction: column;
+        padding: 5px;
+        min-height: 40px;
+        height: auto;
+        width: 200px;
+        // font-weight: 600;
+        letter-spacing: 0.08rem;
+        font-size: 15px;
+        color: white;
+        border: none;
+        background-color: rgb(190, 126, 250);
+        box-shadow: 1px 1px 10px gray;
+        &>*{
+            display: block;
+            margin: 1px auto;
+        }
+        &:hover{
+            padding: 4px;
+            cursor: pointer;
+            box-shadow: none;
+            border: 1px solid grey;
+            box-shadow: 0px 0px 10px rgb(165, 163, 163);
+        }
+       
+        a{
+            text-decoration: none;
+            color: inherit;
+        }
+        img{
+            height: 25px;
+            width: 25px;
+        }
+        
+    }
+
+    .remove-friend-button{
+        background-color: #f84949;
+        color: white;
+        
+        &:hover{
+            padding: 4px;
+            cursor: pointer;
+            box-shadow: none;
+            border: 1px solid red;
+            box-shadow: 0px 0px 10px rgb(165, 163, 163);
+        }
+        
+    }
+}

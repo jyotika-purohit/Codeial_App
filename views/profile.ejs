@@ -1,4 +1,16 @@
-<div>
+<link rel="stylesheet" href="/css/profile.css">
+<div id="profile-container">
+
+    <% let flag=false;%>
+    <% if(locals.localuser) { %>
+        
+        <% for(eachFriendship of user.friendships) { %>
+            
+            <% if ( JSON.stringify(locals.localuser._id) == JSON.stringify(eachFriendship.from) || JSON.stringify(locals.localuser._id) == JSON.stringify(eachFriendship.to) ) { %>
+                <% flag=true; %>
+            <% } %>
+        <% } %>
+    <% } %>
     <p>
         <%= user.name%>
         
@@ -6,9 +18,26 @@
     <p>
         <%= user.email%>
     </p>
-    <% if(locals.localuser && user.id != locals.localuser.id) { %>
+
+    <% if ( (locals.localuser && user.id != locals.localuser.id) && flag==false) { %>
         
-        <button type="submit"><a href="/friendship/create/<%=user.id%>">Add <%=user.name%> as Friend!</a></button>
+        <button type="submit" class="add-friend-button">
+           
+                <img src="https://image.flaticon.com/icons/svg/2583/2583145.svg" alt="">
+           
+          
+                <a href="/friendship/create/<%=user.id%>">Add <%=user.name%> as Friend</a>
+          
+        </button>
         
+    <% }else if(locals.localuser) { %>
+        <button type="submit" class="remove-friend-button">
+            
+                <img src="https://image.flaticon.com/icons/svg/3260/3260698.svg" alt="">
+            
+            
+                <a href="/friendship/delete/<%=locals.localuser.id%>,<%=user.id%>">REMOVE </a>
+            
+        </button>
     <% } %>
 </div>
