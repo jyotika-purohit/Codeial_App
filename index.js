@@ -2,6 +2,7 @@ const express=require('express');
 const app=express();
 const path=require('path');
 const port=8000;
+const env = require('./config/environment');
 const db=require('./config/mongoose');
 const express_ejs_layouts=require('express-ejs-layouts');
 const session=require('express-session');
@@ -24,8 +25,8 @@ var sassMiddleware = require('node-sass-middleware');
 
 app.use(sassMiddleware({
     /* Options */
-    src: './assets/scss',
-    dest: './assets/css',
+    src: path.join(__dirname,env.asset_path,'/scss'),
+    dest: path.join(__dirname,env.asset_path,'/css'),
     debug: true,
     outputStyle: 'extended',
     prefix:  '/css'  // Where prefix is at <link rel="stylesheets" href="prefix/style.css"/>
@@ -35,12 +36,12 @@ app.use(sassMiddleware({
 app.use(express_ejs_layouts);
 // app.set('layout extractStyles',true);
 // app.set('layout extractScripts',true);
-
-app.use(express.static('assets'));
 app.use(express.urlencoded());
+app.use(express.static(env.asset_path));
+
 
 app.use(session({
-    secret: 'blah something',
+    secret: env.session_cookie_key,
     resave: false,
     saveUninitialized: true,
     cookie: {
