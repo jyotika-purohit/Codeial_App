@@ -28,7 +28,7 @@
         padding: 10px;
     
         .not-my-message{
-            
+            word-break: break-all;
             box-sizing: border-box;
             width: 100%;
             display: flex;
@@ -39,11 +39,18 @@
                 height: auto;
                 background-color: lightpink;
                 margin-left: 0%;
+                span{
+                    margin-top: 5px;
+                    display: block;
+                    color: blue;
+                    font-size: 15px;
+                }
             }
 
         }
 
         .my-message{
+            word-break: break-all;
             box-sizing: border-box;
             width: 100%;
             display: flex;
@@ -56,6 +63,12 @@
                 width: 180px;
                 height: auto;
                 background-color: lightskyblue;
+                span{
+                    margin-top: 5px;
+                    display: block;
+                    color: red;
+                    font-size: 15px;
+                }
             }
             
         

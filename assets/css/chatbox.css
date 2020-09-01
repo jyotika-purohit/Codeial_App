@@ -21,6 +21,7 @@
     padding: 0px;
     padding: 10px; }
     #chatbox-container ul .not-my-message {
+      word-break: break-all;
       box-sizing: border-box;
       width: 100%;
       display: flex;
@@ -31,7 +32,13 @@
         height: auto;
         background-color: lightpink;
         margin-left: 0%; }
+        #chatbox-container ul .not-my-message p span {
+          margin-top: 5px;
+          display: block;
+          color: blue;
+          font-size: 15px; }
     #chatbox-container ul .my-message {
+      word-break: break-all;
       box-sizing: border-box;
       width: 100%;
       display: flex;
@@ -42,6 +49,11 @@
         width: 180px;
         height: auto;
         background-color: lightskyblue; }
+        #chatbox-container ul .my-message p span {
+          margin-top: 5px;
+          display: block;
+          color: red;
+          font-size: 15px; }
   #chatbox-container form {
     position: fixed;
     bottom: 0%;

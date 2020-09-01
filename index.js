@@ -11,7 +11,11 @@ const flash=require('connect-flash');
 const customMware=require('./config/middleware');
 const passportGoogle=require('./config/passport-google-oauth2-strategy'); //google-oauth-strategy
 
-
+//setup the chat server to be used with socket.io
+const chatServer = require('http').Server(app); //http is inbuilt module
+const chat_Sockets=require('./config/chat_sockets').chatSockets(chatServer);
+chatServer.listen(5000);
+console.log("Chat Sevrer is listening on port 5000");
 
 app.set('view engine','ejs');
 app.set('views',path.join(__dirname,'views'));
