@@ -1,0 +1,19 @@
+body {
+  margin: 0px;
+  padding: 0px; }
+
+#main-body {
+  display: flex;
+  justify-content: space-between; }
+  #main-body #left-aside {
+    padding: 10px;
+    width: 25%;
+    display: inline-block;
+    vertical-align: top; }
+  #main-body main {
+    width: 50%;
+    display: inline-block; }
+  #main-body #right-aside {
+    width: 20%;
+    display: inline-block;
+    vertical-align: top; }
