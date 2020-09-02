@@ -36,7 +36,7 @@ module.exports.create=async function(req,res){
                 return res.redirect('/users/signin');
             }
             user=await User.create(req.body);
-            reset_password_mailer.password_mail(user,user.email);
+            
             req.flash('success','Sign up successful. Lets sign in!');
             return res.redirect('/users/signin');
 

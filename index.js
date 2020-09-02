@@ -3,6 +3,8 @@ const app=express();
 const path=require('path');
 const port=8000;
 const env = require('./config/environment');
+const logger = require('morgan'); //morgan
+
 const db=require('./config/mongoose');
 const express_ejs_layouts=require('express-ejs-layouts');
 const session=require('express-session');
@@ -23,14 +25,18 @@ app.set('views',path.join(__dirname,'views'));
 var sassMiddleware = require('node-sass-middleware');
 
 
-app.use(sassMiddleware({
-    /* Options */
-    src: path.join(__dirname,env.asset_path,'/scss'),
-    dest: path.join(__dirname,env.asset_path,'/css'),
-    debug: true,
-    outputStyle: 'extended',
-    prefix:  '/css'  // Where prefix is at <link rel="stylesheets" href="prefix/style.css"/>
-}));
+if(env.name == 'development'){ //we dont want this to run again and again in prod
+    app.use(sassMiddleware({
+        /* Options */
+        src: path.join(__dirname,env.asset_path,'/scss'),
+        dest: path.join(__dirname,env.asset_path,'/css'),
+        debug: true,
+        outputStyle: 'extended',
+        prefix:  '/css'  // Where prefix is at <link rel="stylesheets" href="prefix/style.css"/>
+    }));
+}
+
+app.use(logger(env.morgan.mode, env.morgan.options));
 
 
 app.use(express_ejs_layouts);

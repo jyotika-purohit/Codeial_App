@@ -1,0 +1,4 @@
+::1 - - [02/Sep/2020:16:03:37 +0000] "GET /users/signin HTTP/1.1" 304 - "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.135 Safari/537.36"
+::1 - - [02/Sep/2020:16:03:37 +0000] "GET /css/layout.css HTTP/1.1" 304 - "http://localhost:8000/users/signin" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.135 Safari/537.36"
+::1 - - [02/Sep/2020:16:03:37 +0000] "GET /css/header.css HTTP/1.1" 304 - "http://localhost:8000/users/signin" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.135 Safari/537.36"
+::1 - - [02/Sep/2020:16:03:37 +0000] "GET /css/signup-signin.css HTTP/1.1" 304 - "http://localhost:8000/users/signin" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.135 Safari/537.36"
